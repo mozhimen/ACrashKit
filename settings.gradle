@@ -26,3 +26,4 @@ project(':SwiftKit').projectDir = new File("C:\\Users\\${System.getenv().get("US
 include ':SwiftKit:basick'
 include ':SwiftKit:uicorek'
 
+include ':crashk_debug'
