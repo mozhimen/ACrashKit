@@ -1,8 +1,8 @@
-package com.mozhimen.crashk.test
+package com.mozhimen.crashk.debug.test
 
 import android.os.Bundle
 import com.mozhimen.basick.elemk.androidx.appcompat.bases.databinding.BaseActivityVB
-import com.mozhimen.crashk.test.databinding.ActivityCrashkBinding
+import com.mozhimen.crashk.debug.test.databinding.ActivityCrashkBinding
 import java.lang.RuntimeException
 
 class CrashKActivity : BaseActivityVB<ActivityCrashkBinding>() {

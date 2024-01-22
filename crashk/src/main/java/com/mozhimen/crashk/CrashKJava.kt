@@ -23,6 +23,7 @@ import com.mozhimen.basick.utilk.kotlin.getFolderFiles
 import com.mozhimen.basick.utilk.kotlin.throwable2printWriter
 import com.mozhimen.crashk.commons.ICrashK
 import com.mozhimen.crashk.commons.ICrashKListener
+import com.mozhimen.logk.etk
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -89,7 +90,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
             val crashLog = collectDeviceInfoAndCrash(e)
             if (BuildConfig.DEBUG)
                 e.printStackTrace()
-            "UncaughtExceptionHandler handleException log $crashLog".et(TAG)
+            "UncaughtExceptionHandler handleException log $crashLog".etk(TAG)
 
             ///////////////////////////////////////////////////////////////////////////////
 

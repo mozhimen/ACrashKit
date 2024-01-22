@@ -17,16 +17,21 @@ object CrashKDebugMgr {
             val instanceField = Class.forName("com.mozhimen.crashk.CrashKMgr").getDeclaredField("instance")
             if (!instanceField.isAccessible)
                 instanceField.isAccessible = true
-            val instanceClazz = instanceField.get(null) as Class<*>
-            val initMethod = instanceClazz.getDeclaredMethod("init")
-            initMethod.invoke(instanceClazz)
+            val instance = instanceField.get(null)
+            val initMethod = Class.forName("com.mozhimen.crashk.CrashKMgr").getDeclaredMethod("init")
+            initMethod.invoke(instance)
+        } catch (e: ClassNotFoundException) {
+            e.printStackTrace()
+        } catch (e: InstantiationException) {
+            e.printStackTrace()
+        } catch (e: IllegalAccessException) {
+            e.printStackTrace()
+        } catch (e: NoSuchMethodException) {
+            e.printStackTrace()
+        } catch (e: InvocationTargetException) {
+            e.printStackTrace()
         } catch (e: Exception) {
             e.printStackTrace()
-        }/*catch (_: ClassNotFoundException) {
-        } catch (_: InstantiationException) {
-        } catch (_: IllegalAccessException) {
-        } catch (_: NoSuchMethodException) {
-        } catch (_: InvocationTargetException) {
-        }*/
+        }
     }
 }
