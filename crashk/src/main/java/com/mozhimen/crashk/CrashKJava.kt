@@ -1,20 +1,20 @@
 package com.mozhimen.crashk
 
-import com.mozhimen.crashk.BuildConfig
+import android.os.Build
 import com.mozhimen.basick.elemk.cons.CMsg
 import com.mozhimen.basick.lintk.optin.OptInApiInit_InApplication
 import com.mozhimen.basick.manifestk.annors.AManifestKRequire
 import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.basick.stackk.cb.StackKCb
 import com.mozhimen.basick.utilk.android.app.UtilKActivityManager
+import com.mozhimen.basick.utilk.android.app.UtilKMemoryInfo
 import com.mozhimen.basick.utilk.android.content.UtilKApp
 import com.mozhimen.basick.utilk.android.content.UtilKPackage
 import com.mozhimen.basick.utilk.android.hardware.UtilKDevice
 import com.mozhimen.basick.utilk.android.os.UtilKBuild
-import com.mozhimen.basick.utilk.android.util.et
 import com.mozhimen.basick.utilk.bases.BaseUtilK
 import com.mozhimen.basick.utilk.java.io.UtilKFile
-import com.mozhimen.basick.utilk.java.lang.UtilKCurrentThread
+import com.mozhimen.basick.utilk.java.lang.UtilKThread
 import com.mozhimen.basick.utilk.java.util.UtilKDate
 import com.mozhimen.basick.utilk.kotlin.UtilKStrPath
 import com.mozhimen.basick.utilk.kotlin.UtilKStringFormat
@@ -113,7 +113,9 @@ class CrashKJava : BaseUtilK(), ICrashK {
             //device info
             stringBuilder.append(CMsg.LINE_BREAK).append(CMsg.PART_LINE_BIAS).append(CMsg.LINE_BREAK)
             stringBuilder.append("brand= ${UtilKBuild.getBrand()}").append(CMsg.LINE_BREAK)//手机品牌
-            stringBuilder.append("cpu_arch= ${UtilKBuild.getSupportABIs()}").append(CMsg.LINE_BREAK)//CPU架构
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                stringBuilder.append("cpu_arch= ${UtilKBuild.getSupportABIs()}").append(CMsg.LINE_BREAK)
+            }//CPU架构
             stringBuilder.append("model= ${UtilKBuild.getModel()}").append(CMsg.LINE_BREAK)//手机系列
             stringBuilder.append("rom= ${UtilKDevice.getRomVersion()}").append(CMsg.LINE_BREAK)//rom
             stringBuilder.append("os= ${UtilKBuild.getVersionRelease()}").append(CMsg.LINE_BREAK)//API版本:9.0
@@ -121,7 +123,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
             stringBuilder.append("launch_time= $_launchTime").append(CMsg.LINE_BREAK)//启动APP的时间
             stringBuilder.append("crash_time= ${UtilKDate.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
             stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
-            stringBuilder.append("thread= ${UtilKCurrentThread.getName()}").append(CMsg.LINE_BREAK)//异常线程名
+            stringBuilder.append("thread= ${UtilKThread.getCurName()}").append(CMsg.LINE_BREAK)//异常线程名
 
             //app info
             stringBuilder.append("version_code= ${UtilKPackage.getVersionCode()}").append(CMsg.LINE_BREAK)
@@ -131,8 +133,8 @@ class CrashKJava : BaseUtilK(), ICrashK {
 
             //storage info
             val memoryInfo = UtilKActivityManager.getMemoryInfo(_context)
-            stringBuilder.append("availableMemory= ${UtilKActivityManager.getAvailMemSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//可用内存
-            stringBuilder.append("totalMemory= ${UtilKActivityManager.getTotalMenSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//设备总内存
+            stringBuilder.append("availableMemory= ${UtilKMemoryInfo.getAvailMemSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//可用内存
+            stringBuilder.append("totalMemory= ${UtilKMemoryInfo.getTotalMenSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//设备总内存
 
             //sd storage size
             try {
