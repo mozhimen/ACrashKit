@@ -1,7 +1,7 @@
 package com.mozhimen.crashk
 
 import android.util.Log
-import com.mozhimen.basick.lintk.optin.OptInApiInit_InApplication
+import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
 import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.basick.manifestk.annors.AManifestKRequire
 import com.mozhimen.basick.utilk.bases.IUtilK
@@ -16,7 +16,7 @@ import java.io.File
  * @Date 2022/3/28 14:32
  * @Version 1.0
  */
-@OptInApiInit_InApplication
+@OApiInit_InApplication
 @AManifestKRequire(CPermission.READ_PHONE_STATE, CPermission.READ_PRIVILEGED_PHONE_STATE)
 class CrashKMgr : ICrashKMgr, IUtilK {
 

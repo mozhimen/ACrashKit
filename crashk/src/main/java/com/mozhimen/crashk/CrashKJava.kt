@@ -2,7 +2,7 @@ package com.mozhimen.crashk
 
 import android.os.Build
 import com.mozhimen.basick.elemk.cons.CMsg
-import com.mozhimen.basick.lintk.optin.OptInApiInit_InApplication
+import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
 import com.mozhimen.basick.manifestk.annors.AManifestKRequire
 import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.basick.stackk.cb.StackKCb
@@ -35,7 +35,7 @@ import java.io.StringWriter
  * @Date 2022/3/27 16:27
  * @Version 1.0
  */
-@OptInApiInit_InApplication
+@OApiInit_InApplication
 @AManifestKRequire(CPermission.READ_PHONE_STATE, CPermission.READ_PRIVILEGED_PHONE_STATE)
 class CrashKJava : BaseUtilK(), ICrashK {
 
@@ -65,7 +65,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
 
     ////////////////////////////////////////////////////////////////////////////////////////
 
-    @OptInApiInit_InApplication
+    @OApiInit_InApplication
     private inner class CrashKUncaughtExceptionHandler(private val _isRestart: Boolean = true) : Thread.UncaughtExceptionHandler {
         private val _defaultExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()
         private val _launchTime = UtilKDate.getNowStr()
