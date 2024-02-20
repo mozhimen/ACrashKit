@@ -3,7 +3,7 @@ package com.mozhimen.crashk
 import android.os.Build
 import com.mozhimen.basick.elemk.cons.CMsg
 import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
-import com.mozhimen.basick.manifestk.annors.AManifestKRequire
+import com.mozhimen.basick.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
 import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.basick.stackk.cb.StackKCb
 import com.mozhimen.basick.utilk.android.app.UtilKActivityManager
@@ -36,7 +36,6 @@ import java.io.StringWriter
  * @Version 1.0
  */
 @OApiInit_InApplication
-@AManifestKRequire(CPermission.READ_PHONE_STATE, CPermission.READ_PRIVILEGED_PHONE_STATE)
 class CrashKJava : BaseUtilK(), ICrashK {
 
     private var _crashKListener: ICrashKListener? = null
@@ -70,6 +69,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
         private val _defaultExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()
         private val _launchTime = UtilKDate.getNowStr()
 
+        @OptIn(OPermission_QUERY_ALL_PACKAGES::class)
         override fun uncaughtException(t: Thread, e: Throwable) {
             if (!handleException(e) && _defaultExceptionHandler != null) {
                 _defaultExceptionHandler.uncaughtException(t, e)
