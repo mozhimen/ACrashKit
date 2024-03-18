@@ -27,7 +27,7 @@ class MainApplication : BaseApplication() {
     private val _crashKCallback = object : ICrashKListener {
 
         override fun onGetCrashLog(msg: String) {
-            //msg?.et(TAG) ?: "Ops! A crash happened, but i didn't get it messages".e()
+            //msg?.e(TAG) ?: "Ops! A crash happened, but i didn't get it messages".e()
         }
     }
 }
