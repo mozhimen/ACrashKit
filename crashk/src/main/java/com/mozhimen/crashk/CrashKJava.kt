@@ -103,7 +103,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
         }
 
         private fun saveCrashLog2File(log: String) {
-            val savePath = crashPathJava + "/${UtilKFile.getStrFileNameForStrNowDate()}.txt"
+            val savePath = crashPathJava + "/${UtilKFile.getStrFileName_ofNow()}.txt"
             UtilKStringFormat.str2file(log, savePath)
         }
 
