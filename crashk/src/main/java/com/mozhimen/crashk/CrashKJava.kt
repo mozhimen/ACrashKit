@@ -9,7 +9,7 @@ import com.mozhimen.basick.utilk.android.app.UtilKActivityManager
 import com.mozhimen.basick.utilk.android.app.UtilKMemoryInfo
 import com.mozhimen.basick.utilk.wrapper.UtilKApp
 import com.mozhimen.basick.utilk.android.content.UtilKPackage
-import com.mozhimen.basick.utilk.android.hardware.UtilKDevice
+import com.mozhimen.basick.utilk.wrapper.UtilKDevice
 import com.mozhimen.basick.utilk.android.os.UtilKBuild
 import com.mozhimen.basick.utilk.bases.BaseUtilK
 import com.mozhimen.basick.utilk.java.io.UtilKFile
