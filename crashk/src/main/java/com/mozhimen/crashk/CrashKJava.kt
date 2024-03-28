@@ -12,9 +12,10 @@ import com.mozhimen.basick.utilk.android.content.UtilKPackage
 import com.mozhimen.basick.utilk.wrapper.UtilKDevice
 import com.mozhimen.basick.utilk.android.os.UtilKBuild
 import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.basick.utilk.java.io.UtilKFile
+import com.mozhimen.basick.utilk.java.io.UtilKFileWrapper
 import com.mozhimen.basick.utilk.java.lang.UtilKThread
 import com.mozhimen.basick.utilk.java.util.UtilKDate
+import com.mozhimen.basick.utilk.kotlin.UtilKStrFile
 import com.mozhimen.basick.utilk.kotlin.UtilKStrPath
 import com.mozhimen.basick.utilk.kotlin.UtilKStringFormat
 import com.mozhimen.basick.utilk.kotlin.createFolder
@@ -102,7 +103,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
         }
 
         private fun saveCrashLog2File(log: String) {
-            val savePath = crashPathJava + "/${UtilKFile.getStrFileName_ofNow()}.txt"
+            val savePath = crashPathJava + "/${UtilKStrFile.getStrFileName_ofNow()}.txt"
             UtilKStringFormat.str2file(log, savePath)
         }
 
