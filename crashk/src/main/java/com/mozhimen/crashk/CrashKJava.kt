@@ -12,9 +12,8 @@ import com.mozhimen.basick.utilk.android.content.UtilKPackage
 import com.mozhimen.basick.utilk.wrapper.UtilKDevice
 import com.mozhimen.basick.utilk.android.os.UtilKBuild
 import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.basick.utilk.java.io.UtilKFileWrapper
 import com.mozhimen.basick.utilk.java.lang.UtilKThread
-import com.mozhimen.basick.utilk.java.util.UtilKDate
+import com.mozhimen.basick.utilk.java.util.UtilKDateWrapper
 import com.mozhimen.basick.utilk.kotlin.UtilKStrFile
 import com.mozhimen.basick.utilk.kotlin.UtilKStrPath
 import com.mozhimen.basick.utilk.kotlin.UtilKStringFormat
@@ -67,7 +66,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
     @OApiInit_InApplication
     private inner class CrashKUncaughtExceptionHandler(private val _isRestart: Boolean = true) : Thread.UncaughtExceptionHandler {
         private val _defaultExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()
-        private val _launchTime = UtilKDate.getNowStr()
+        private val _launchTime = UtilKDateWrapper.getNowStr()
 
         @OptIn(OPermission_QUERY_ALL_PACKAGES::class)
         override fun uncaughtException(t: Thread, e: Throwable) {
@@ -121,9 +120,9 @@ class CrashKJava : BaseUtilK(), ICrashK {
             stringBuilder.append("os= ${UtilKBuild.getVersionRelease()}").append(CMsg.LINE_BREAK)//API版本:9.0
             stringBuilder.append("sdk= ${UtilKBuild.getVersionSDK()}").append(CMsg.LINE_BREAK)//SDK版本:31
             stringBuilder.append("launch_time= $_launchTime").append(CMsg.LINE_BREAK)//启动APP的时间
-            stringBuilder.append("crash_time= ${UtilKDate.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
+            stringBuilder.append("crash_time= ${UtilKDateWrapper.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
             stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
-            stringBuilder.append("thread= ${UtilKThread.getCurName()}").append(CMsg.LINE_BREAK)//异常线程名
+            stringBuilder.append("thread= ${UtilKThread.getName_ofCur()}").append(CMsg.LINE_BREAK)//异常线程名
 
             //app info
             stringBuilder.append("version_code= ${UtilKPackage.getVersionCode()}").append(CMsg.LINE_BREAK)
