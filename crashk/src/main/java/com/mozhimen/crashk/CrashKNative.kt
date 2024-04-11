@@ -12,7 +12,6 @@ import java.io.File
  * @ClassName CrashKNative
  * @Description TODO
  * @Author Kolin Zhao / Mozhimen
- * @Date 2022/3/28 14:34
  * @Version 1.0
  */
 class CrashKNative : ICrashK {
