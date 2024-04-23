@@ -1,6 +1,7 @@
 package com.mozhimen.crashk
 
 import android.util.Log
+import com.mozhimen.basick.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
 import com.mozhimen.basick.lintk.optins.permission.OPermission_READ_PHONE_STATE
 import com.mozhimen.basick.lintk.optins.permission.OPermission_READ_PRIVILEGED_PHONE_STATE
@@ -36,7 +37,7 @@ class CrashKMgr : ICrashKMgr, IUtilK {
         crashKNativeListener: ICrashKListener? = null,
         isRestart: Boolean = true
     ) {
-        Log.d(TAG, "init: ")
+        UtilKLogWrapper.d(TAG, "init: ")
         _crashKJava.setEnableRestart(isRestart).init(crashKJavaListener)
         _crashKNative.init(crashKNativeListener)
     }
