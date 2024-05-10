@@ -23,6 +23,8 @@ include ':app'
 include ':crashk'
 include ':crashk_debug'
 include ':crashk_debug_test'
+include ':crashk_native'
+include ':crashk_native_test'
 //SwiftKit
 include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
@@ -37,7 +39,3 @@ include ':AXmlKit'
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
 include ':AXmlKit:recyclerk'
 include ':AXmlKit:vhk'
-//ACrashKit_Native
-include ':ACrashKit_Native'
-project(':ACrashKit_Native').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
-include ':ACrashKit_Native:crashk_native'
