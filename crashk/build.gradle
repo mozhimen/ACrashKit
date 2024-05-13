@@ -33,7 +33,7 @@ android {
 
 dependencies {
     implementation project(':SwiftKit:basick')
-    implementation project(':crashk_native')
+    implementation project(':ACrashKit:crashk_native')
     implementation project(':ALogKit:logk')
 
     //test
