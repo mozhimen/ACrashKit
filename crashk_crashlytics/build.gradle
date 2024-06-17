@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.crashk'
+    namespace 'com.mozhimen.crashk.crashlytics'
     compileSdk 34
 
     defaultConfig {
         minSdk 19
-        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -28,15 +27,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures.buildConfig = true
 }
 
 dependencies {
-    implementation project(':SwiftKit:basick')
-    implementation project(project.path.replace(project.name, '') + ':crashk_native')
-    implementation project(':ALogKit:logk')
+    implementation project(':ALibKit_Google:firebase_crashlytics')
 
-    //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
