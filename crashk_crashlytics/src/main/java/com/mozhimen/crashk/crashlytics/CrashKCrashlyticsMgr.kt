@@ -1,6 +1,8 @@
 package com.mozhimen.crashk.crashlytics
 
+import com.mozhimen.libk.google.firebase.basic.optins.OApiInit_InApplication_FirebaseBasicMgr
 import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_FirebaseCrashlytics
+import com.mozhimen.libk.google.firebase.crashlytics.FirebaseCrashlyticsMgr
 
 /**
  * @ClassName FirebaseCrashlytics
@@ -12,7 +14,8 @@ import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_Firebase
 object CrashKCrashlyticsMgr {
     @JvmStatic
     @OPlugin_ClassPath_FirebaseCrashlytics
+    @OApiInit_InApplication_FirebaseBasicMgr
     fun init() {
-
+        FirebaseCrashlyticsMgr.init()
     }
 }
