@@ -20,6 +20,7 @@ import com.mozhimen.basick.utilk.kotlin.UtilKStringFormat
 import com.mozhimen.basick.utilk.kotlin.createFolder
 import com.mozhimen.basick.utilk.kotlin.getFolderFiles
 import com.mozhimen.basick.utilk.kotlin.throwable2printWriter
+import com.mozhimen.basick.utilk.wrapper.UtilKStorage
 import com.mozhimen.crashk.commons.ICrashK
 import com.mozhimen.crashk.commons.ICrashKListener
 import com.mozhimen.logk.etk
@@ -136,7 +137,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
 
             //sd storage size
             try {
-                stringBuilder.append("availableStorage= ${UtilKDevice.getFreeExternalMemorySize()}").append(CMsg.LINE_BREAK)//存储空间
+                stringBuilder.append("availableStorage= ${UtilKStorage.getExternalMemorySize_ofFree()}").append(CMsg.LINE_BREAK)//存储空间
             } catch (_: Exception) {
             }
             stringBuilder.append(CMsg.PART_LINE_BIAS).append(CMsg.LINE_BREAK)
