@@ -125,10 +125,10 @@ class CrashKJava : BaseUtilK(), ICrashK {
             stringBuilder.append("thread= ${UtilKThread.getName_ofCur()}").append(CMsg.LINE_BREAK)//异常线程名
 
             //app info
-            stringBuilder.append("version_code= ${UtilKPackage.getVersionCode()}").append(CMsg.LINE_BREAK)
-            stringBuilder.append("version_name= ${UtilKPackage.getVersionName()}").append(CMsg.LINE_BREAK)
+            stringBuilder.append("version_code= ${UtilKPackage.getVersionCode(0)}").append(CMsg.LINE_BREAK)
+            stringBuilder.append("version_name= ${UtilKPackage.getVersionName(0)}").append(CMsg.LINE_BREAK)
             stringBuilder.append("package_code= ${UtilKPackage.getPackageName()}").append(CMsg.LINE_BREAK)
-            stringBuilder.append("requested_permissions= ${UtilKPackage.getRequestedPermissionsStr()}").append(CMsg.LINE_BREAK)
+            stringBuilder.append("requested_permissions= ${UtilKPackage.getRequestedPermissionsStr(0)}").append(CMsg.LINE_BREAK)
 
             //storage info
             val memoryInfo = UtilKActivityManager.getMemoryInfo(_context)
