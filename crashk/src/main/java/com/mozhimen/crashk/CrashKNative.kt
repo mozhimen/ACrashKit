@@ -1,9 +1,9 @@
 package com.mozhimen.crashk
 
 import com.mozhimen.crashk.commons.ICrashKListener
-import com.mozhimen.basick.utilk.kotlin.UtilKStrPath
-import com.mozhimen.basick.utilk.kotlin.createFolder
-import com.mozhimen.basick.utilk.kotlin.getFolderFiles
+import com.mozhimen.kotlin.utilk.kotlin.UtilKStrPath
+import com.mozhimen.kotlin.utilk.kotlin.createFolder
+import com.mozhimen.kotlin.utilk.kotlin.getFolderFiles
 import com.mozhimen.crashk_native.CrashKNativeLib
 import com.mozhimen.crashk.commons.ICrashK
 import java.io.File

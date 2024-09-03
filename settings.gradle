@@ -29,6 +29,7 @@ include ':crashk_native_test'
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
 include ':ALibKit_Google:firebase_crashlytics'
+include ':ALibKit_Google:firebase_analytics'
 include ':ALibKit_Google:firebase_basic'
 //ALibKit_Squareup
 include ':ALibKit_Squareup'
@@ -53,3 +54,8 @@ include ':ASerialKit'
 project(':ASerialKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASerialKit")
 include ':ASerialKit:serialk_moshi'
 include ':crashk_crashlytics'
+//KUtilKit
+include ':KUtilKit'
+project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
+include ':KUtilKit:utilk_android'
+include ':KUtilKit:utilk_kotlin'

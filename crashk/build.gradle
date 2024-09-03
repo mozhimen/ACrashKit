@@ -32,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation project(':SwiftKit:basick')
+    implementation project(':KUtilKit:utilk_android')
     implementation project(project.path.replace(project.name, '') + ':crashk_native')
     implementation project(':ALogKit:logk')
 

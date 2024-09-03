@@ -1,26 +1,25 @@
 package com.mozhimen.crashk
 
 import android.os.Build
-import com.mozhimen.basick.elemk.cons.CMsg
-import com.mozhimen.basick.lintk.optins.OApiInit_InApplication
-import com.mozhimen.basick.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
-import com.mozhimen.basick.stackk.cb.StackKCb
-import com.mozhimen.basick.utilk.android.app.UtilKActivityManager
-import com.mozhimen.basick.utilk.android.app.UtilKMemoryInfo
-import com.mozhimen.basick.utilk.wrapper.UtilKApp
-import com.mozhimen.basick.utilk.android.content.UtilKPackage
-import com.mozhimen.basick.utilk.wrapper.UtilKDevice
-import com.mozhimen.basick.utilk.android.os.UtilKBuild
-import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.basick.utilk.java.lang.UtilKThread
-import com.mozhimen.basick.utilk.java.util.UtilKDateWrapper
-import com.mozhimen.basick.utilk.kotlin.UtilKStrFile
-import com.mozhimen.basick.utilk.kotlin.UtilKStrPath
-import com.mozhimen.basick.utilk.kotlin.UtilKStringFormat
-import com.mozhimen.basick.utilk.kotlin.createFolder
-import com.mozhimen.basick.utilk.kotlin.getFolderFiles
-import com.mozhimen.basick.utilk.kotlin.throwable2printWriter
-import com.mozhimen.basick.utilk.wrapper.UtilKStorage
+import com.mozhimen.kotlin.elemk.cons.CMsg
+import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
+import com.mozhimen.kotlin.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
+import com.mozhimen.kotlin.utilk.android.app.UtilKActivityManager
+import com.mozhimen.kotlin.utilk.android.app.UtilKMemoryInfo
+import com.mozhimen.kotlin.utilk.wrapper.UtilKApp
+import com.mozhimen.kotlin.utilk.android.content.UtilKPackage
+import com.mozhimen.kotlin.utilk.wrapper.UtilKDevice
+import com.mozhimen.kotlin.utilk.android.os.UtilKBuild
+import com.mozhimen.kotlin.utilk.bases.BaseUtilK
+import com.mozhimen.kotlin.utilk.java.lang.UtilKThread
+import com.mozhimen.kotlin.utilk.java.util.UtilKDateWrapper
+import com.mozhimen.kotlin.utilk.kotlin.UtilKStrFile
+import com.mozhimen.kotlin.utilk.kotlin.UtilKStrPath
+import com.mozhimen.kotlin.utilk.kotlin.UtilKStringFormat
+import com.mozhimen.kotlin.utilk.kotlin.createFolder
+import com.mozhimen.kotlin.utilk.kotlin.getFolderFiles
+import com.mozhimen.kotlin.utilk.kotlin.throwable2printWriter
+import com.mozhimen.kotlin.utilk.wrapper.UtilKStorage
 import com.mozhimen.crashk.commons.ICrashK
 import com.mozhimen.crashk.commons.ICrashKListener
 import com.mozhimen.logk.etk
@@ -121,7 +120,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
             stringBuilder.append("sdk= ${UtilKBuild.getVersionSDK()}").append(CMsg.LINE_BREAK)//SDK版本:31
             stringBuilder.append("launch_time= $_launchTime").append(CMsg.LINE_BREAK)//启动APP的时间
             stringBuilder.append("crash_time= ${UtilKDateWrapper.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
-            stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
+//            stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
             stringBuilder.append("thread= ${UtilKThread.getName_ofCur()}").append(CMsg.LINE_BREAK)//异常线程名
 
             //app info
