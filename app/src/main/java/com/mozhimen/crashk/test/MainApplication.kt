@@ -1,8 +1,8 @@
 package com.mozhimen.crashk.test
 
-import com.mozhimen.basick.elemk.android.app.bases.BaseApplication
-import com.mozhimen.basick.lintk.optin.OptInApiInit_InApplication
-import com.mozhimen.basick.lintk.optin.OptInApiMultiDex_InApplication
+import com.mozhimen.stackk.bases.BaseApplication
+import com.mozhimen.kotlin.lintk.optin.OptInApiInit_InApplication
+import com.mozhimen.kotlin.lintk.optin.OptInApiMultiDex_InApplication
 import com.mozhimen.crashk.CrashKMgr
 import com.mozhimen.crashk.commons.ICrashKListener
 
