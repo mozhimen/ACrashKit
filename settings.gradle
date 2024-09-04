@@ -25,6 +25,7 @@ include ':crashk_debug'
 include ':crashk_debug_test'
 include ':crashk_native'
 include ':crashk_native_test'
+include ':crashk_crashlytics'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -40,10 +41,6 @@ include ':SwiftKit'
 project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
 include ':SwiftKit:basick'
 include ':SwiftKit:xmlk'
-//ALogKit
-include ':ALogKit'
-project(':ALogKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ALogKit")
-include ':ALogKit:logk'
 //AXmlKit
 include ':AXmlKit'
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
@@ -53,7 +50,6 @@ include ':AXmlKit:vhk'
 include ':ASerialKit'
 project(':ASerialKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASerialKit")
 include ':ASerialKit:serialk_moshi'
-include ':crashk_crashlytics'
 //KUtilKit
 include ':KUtilKit'
 project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")

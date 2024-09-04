@@ -22,7 +22,7 @@ import com.mozhimen.kotlin.utilk.kotlin.throwable2printWriter
 import com.mozhimen.kotlin.utilk.wrapper.UtilKStorage
 import com.mozhimen.crashk.commons.ICrashK
 import com.mozhimen.crashk.commons.ICrashKListener
-import com.mozhimen.logk.etk
+import com.mozhimen.kotlin.utilk.android.util.e
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -88,7 +88,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
             val crashLog = collectDeviceInfoAndCrash(e)
             if (BuildConfig.DEBUG)
                 e.printStackTrace()
-            "UncaughtExceptionHandler handleException log $crashLog".etk(TAG)
+            "UncaughtExceptionHandler handleException log $crashLog".e(TAG)
 
             ///////////////////////////////////////////////////////////////////////////////
 
@@ -102,7 +102,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
 
         private fun saveCrashLog2File(log: String) {
             val savePath = crashPathJava + "/${UtilKStrFile.getStrFileName_ofNow()}.txt"
-            UtilKStringFormat.str2file(log, savePath)
+            UtilKStringFormat.str2file_use(log, savePath)
         }
 
         private fun collectDeviceInfoAndCrash(e: Throwable): String {
