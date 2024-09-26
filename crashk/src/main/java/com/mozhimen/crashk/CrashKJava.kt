@@ -121,7 +121,7 @@ class CrashKJava : BaseUtilK(), ICrashK {
             stringBuilder.append("launch_time= $_launchTime").append(CMsg.LINE_BREAK)//启动APP的时间
             stringBuilder.append("crash_time= ${UtilKDateWrapper.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
 //            stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
-            stringBuilder.append("thread= ${UtilKThread.getName_ofCur()}").append(CMsg.LINE_BREAK)//异常线程名
+            stringBuilder.append("thread= ${UtilKThread.getName_ofCurrent()}").append(CMsg.LINE_BREAK)//异常线程名
 
             //app info
             stringBuilder.append("version_code= ${UtilKPackage.getVersionCode(0)}").append(CMsg.LINE_BREAK)
