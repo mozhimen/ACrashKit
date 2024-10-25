@@ -1,10 +1,10 @@
 package com.mozhimen.crashk.test
 
+import com.mozhimen.crashk.CrashKJavaMgr
+import com.mozhimen.crashk.basic.commons.ICrashKListener
+import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.stackk.bases.BaseApplication
-import com.mozhimen.kotlin.lintk.optin.OptInApiInit_InApplication
-import com.mozhimen.kotlin.lintk.optin.OptInApiMultiDex_InApplication
-import com.mozhimen.crashk.CrashKMgr
-import com.mozhimen.crashk.commons.ICrashKListener
+import com.mozhimen.kotlin.lintk.optins.OApiMultiDex_InApplication
 
 /**
  * @ClassName UnderlayKApplication
@@ -13,19 +13,18 @@ import com.mozhimen.crashk.commons.ICrashKListener
  * @Date 2022/9/24 17:41
  * @Version 1.0
  */
-@OptIn(OptInApiMultiDex_InApplication::class)
-@OptInApiInit_InApplication
+@OptIn(OApiMultiDex_InApplication::class)
 class MainApplication : BaseApplication() {
+    @OptIn(OApiInit_InApplication::class)
     override fun onCreate() {
         super.onCreate()
 
         //crashk
-        CrashKMgr.instance.init(_crashKCallback)
+        CrashKJavaMgr.instance.init(_crashKCallback)
 
     }
 
     private val _crashKCallback = object : ICrashKListener {
-
         override fun onGetCrashLog(msg: String) {
             //msg?.e(TAG) ?: "Ops! A crash happened, but i didn't get it messages".e()
         }

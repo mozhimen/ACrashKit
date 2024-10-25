@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace "com.mozhimen.crashk_native"
+    namespace 'com.mozhimen.crashk'
     compileSdk 34
 
     defaultConfig {
@@ -13,17 +13,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        ndkVersion "16.1.4479499"
-        externalNativeBuild {
-            cmake {
-                cppFlags "-std=c++11"
-            }
-        }
-        ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
-            //指定支持的abi版本，也即是编译之后生成的so文件的类型
-        }
     }
 
     buildTypes {
@@ -32,14 +21,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-            version "3.18.1"
-        }
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -47,13 +28,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures.buildConfig = true
 }
 
 dependencies {
-    api project(project.path.replace(project.name, "") + ':crashk_basic')
     implementation project(':KUtilKit:utilk_android')
+    api project(project.path.replace(project.name, '') + ':crashk_basic')
 
+    //test
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
