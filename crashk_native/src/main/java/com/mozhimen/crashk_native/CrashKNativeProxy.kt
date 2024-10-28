@@ -1,7 +1,7 @@
 package com.mozhimen.crashk_native
 
-import com.mozhimen.crashk.basic.commons.ICrashK
 import com.mozhimen.crashk.basic.commons.ICrashKListener
+import com.mozhimen.crashk_native.commons.ICrashKNative
 import com.mozhimen.kotlin.utilk.kotlin.UtilKStrPath
 import com.mozhimen.kotlin.utilk.kotlin.createFolder
 import com.mozhimen.kotlin.utilk.kotlin.getFolderFiles
@@ -13,8 +13,10 @@ import java.io.File
  * @Author Kolin Zhao / Mozhimen
  * @Version 1.0
  */
-class CrashKNativeProxy : ICrashK {
+class CrashKNativeProxy : ICrashKNative {
     private var _crashKListener: ICrashKListener? = null
+
+    ////////////////////////////////////////////////////////////////////////////
 
     var crashPathNative: String? = null
         get() {
@@ -24,9 +26,15 @@ class CrashKNativeProxy : ICrashK {
             return crashFullPath.also { field = it }
         }
 
+    ////////////////////////////////////////////////////////////////////////////
+
     override fun init(listener: ICrashKListener?) {
         listener?.let { this._crashKListener = it }
         CrashKNativeLib.init(crashPathNative!!)
+    }
+
+    override fun testNativeCrash() {
+        CrashKNativeLib.testNativeCrash()
     }
 
     override fun getCrashFiles(): Array<File> =

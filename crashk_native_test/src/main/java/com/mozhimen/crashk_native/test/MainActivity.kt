@@ -1,18 +1,22 @@
 package com.mozhimen.crashk_native.test
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import com.mozhimen.crashk_native.CrashKNativeLib
+import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
+import com.mozhimen.crashk_native.CrashKNativeMgr
+import com.mozhimen.crashk_native.test.databinding.ActivityMainBinding
+import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
+import com.mozhimen.kotlin.utilk.android.util.w
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseActivityVB<ActivityMainBinding>() {
 
-        CrashKNativeLib.init(this.cacheDir.absolutePath)
-        findViewById<TextView>(R.id.main_btn_crash).setOnClickListener {
-            CrashKNativeLib.testNativeCrash()
+    @OptIn(OApiInit_InApplication::class)
+    override fun initView(savedInstanceState: Bundle?) {
+        vb.mainBtnCrash.setOnClickListener {
+            CrashKNativeMgr.instance.testNativeCrash()
+        }
+
+        vb.mainBtnCrashGet.setOnClickListener {
+            CrashKNativeMgr.instance.getCrashFiles().map { it.name to it.lastModified() }.toList().joinToString { it.first + ":" + it.second }.w()
         }
     }
 }
