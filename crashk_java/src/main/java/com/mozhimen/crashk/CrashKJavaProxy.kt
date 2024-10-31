@@ -1,6 +1,7 @@
 package com.mozhimen.crashk
 
 import android.os.Build
+import android.util.Log
 import com.mozhimen.crashk.basic.commons.ICrashK
 import com.mozhimen.crashk.basic.commons.ICrashKListener
 import com.mozhimen.crashk.commons.ICrashKJava
@@ -87,9 +88,8 @@ class CrashKJavaProxy : BaseUtilK(), ICrashK, ICrashKJava<CrashKJavaProxy> {
          */
         private fun handleException(e: Throwable): Boolean {
             val crashLog = collectDeviceInfoAndCrash(e)
-            if (BuildConfig.DEBUG)
-                e.printStackTrace()
-            "UncaughtExceptionHandler handleException log $crashLog".e(TAG)
+            e.printStackTrace()
+            Log.e(TAG, "handleException: crashLog $crashLog")
 
             ///////////////////////////////////////////////////////////////////////////////
 
