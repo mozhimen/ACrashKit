@@ -1,10 +1,10 @@
-package com.mozhimen.crashk
+package com.mozhimen.crashk.java
 
 import android.os.Build
 import android.util.Log
 import com.mozhimen.crashk.basic.commons.ICrashK
 import com.mozhimen.crashk.basic.commons.ICrashKListener
-import com.mozhimen.crashk.commons.ICrashKJava
+import com.mozhimen.crashk.java.commons.ICrashKJava
 import com.mozhimen.kotlin.elemk.cons.CMsg
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
@@ -52,6 +52,10 @@ class CrashKJavaProxy : BaseUtilK(), ICrashK, ICrashKJava<CrashKJavaProxy> {
     override fun setEnableRestart(isRestart: Boolean): CrashKJavaProxy {
         _isRestart = isRestart
         return this
+    }
+
+    override fun init() {
+        init(null)
     }
 
     override fun init(listener: ICrashKListener?) {

@@ -1,7 +1,7 @@
-package com.mozhimen.crashk
+package com.mozhimen.crashk.java
 
 import com.mozhimen.crashk.basic.commons.ICrashK
-import com.mozhimen.crashk.commons.ICrashKJava
+import com.mozhimen.crashk.java.commons.ICrashKJava
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 
 /**

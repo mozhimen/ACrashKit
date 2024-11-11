@@ -28,6 +28,10 @@ class CrashKNativeProxy : ICrashKNative {
 
     ////////////////////////////////////////////////////////////////////////////
 
+    override fun init() {
+        init(null)
+    }
+
     override fun init(listener: ICrashKListener?) {
         listener?.let { this._crashKListener = it }
         CrashKNativeLib.init(crashPathNative!!)

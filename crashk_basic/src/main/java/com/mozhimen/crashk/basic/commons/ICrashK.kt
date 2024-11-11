@@ -10,6 +10,7 @@ import java.io.File
  * @Version 1.0
  */
 interface ICrashK {
+    fun init()
     fun init(listener: ICrashKListener?)
     fun getCrashFiles(): Array<File>
 }

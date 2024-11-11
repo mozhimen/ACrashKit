@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.crashk'
+    namespace 'com.mozhimen.crashk.java'
     compileSdk 34
 
     defaultConfig {

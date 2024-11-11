@@ -1,4 +1,4 @@
-package com.mozhimen.crashk.commons
+package com.mozhimen.crashk.java.commons
 
 import java.io.File
 
