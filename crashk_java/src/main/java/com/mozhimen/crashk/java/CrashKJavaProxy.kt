@@ -1,5 +1,6 @@
 package com.mozhimen.crashk.java
 
+import android.app.ActivityManager.MemoryInfo
 import android.os.Build
 import android.util.Log
 import com.mozhimen.crashk.basic.commons.ICrashK
@@ -135,7 +136,8 @@ class CrashKJavaProxy : BaseUtilK(), ICrashK, ICrashKJava<CrashKJavaProxy> {
             stringBuilder.append("requested_permissions= ${UtilKPackage.getRequestedPermissionsStr(0)}").append(CMsg.LINE_BREAK)
 
             //storage info
-            val memoryInfo = UtilKActivityManager.getMemoryInfo(_context)
+            val memoryInfo = MemoryInfo()
+            UtilKMemoryInfo.get(_context, memoryInfo)
             stringBuilder.append("availableMemory= ${UtilKMemoryInfo.getAvailMemSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//可用内存
             stringBuilder.append("totalMemory= ${UtilKMemoryInfo.getTotalMenSizeStr(memoryInfo)}").append(CMsg.LINE_BREAK)//设备总内存
 
