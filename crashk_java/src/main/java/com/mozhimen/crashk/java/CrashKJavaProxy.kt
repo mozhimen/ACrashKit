@@ -9,12 +9,12 @@ import com.mozhimen.crashk.java.commons.ICrashKJava
 import com.mozhimen.kotlin.elemk.cons.CMsg
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.kotlin.lintk.optins.permission.OPermission_QUERY_ALL_PACKAGES
-import com.mozhimen.kotlin.utilk.android.app.UtilKActivityManager
 import com.mozhimen.kotlin.utilk.android.app.UtilKMemoryInfo
 import com.mozhimen.kotlin.utilk.wrapper.UtilKApp
 import com.mozhimen.kotlin.utilk.android.content.UtilKPackage
 import com.mozhimen.kotlin.utilk.wrapper.UtilKDevice
 import com.mozhimen.kotlin.utilk.android.os.UtilKBuild
+import com.mozhimen.kotlin.utilk.android.os.UtilKBuildVersion
 import com.mozhimen.kotlin.utilk.bases.BaseUtilK
 import com.mozhimen.kotlin.utilk.java.lang.UtilKThread
 import com.mozhimen.kotlin.utilk.java.util.UtilKDateWrapper
@@ -25,7 +25,6 @@ import com.mozhimen.kotlin.utilk.kotlin.createFolder
 import com.mozhimen.kotlin.utilk.kotlin.getFolderFiles
 import com.mozhimen.kotlin.utilk.kotlin.throwable2printWriter
 import com.mozhimen.kotlin.utilk.wrapper.UtilKStorage
-import com.mozhimen.kotlin.utilk.android.util.e
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -116,14 +115,14 @@ class CrashKJavaProxy : BaseUtilK(), ICrashK, ICrashKJava<CrashKJavaProxy> {
 
             //device info
             stringBuilder.append(CMsg.LINE_BREAK).append(CMsg.PART_LINE_BIAS).append(CMsg.LINE_BREAK)
-            stringBuilder.append("brand= ${UtilKBuild.getBrand()}").append(CMsg.LINE_BREAK)//手机品牌
+            stringBuilder.append("brand= ${UtilKBuild.get_BRAND()}").append(CMsg.LINE_BREAK)//手机品牌
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                stringBuilder.append("cpu_arch= ${UtilKBuild.getSupportABIs()}").append(CMsg.LINE_BREAK)
+                stringBuilder.append("cpu_arch= ${UtilKBuild.get_SUPPORTED_ABIS()}").append(CMsg.LINE_BREAK)
             }//CPU架构
-            stringBuilder.append("model= ${UtilKBuild.getModel()}").append(CMsg.LINE_BREAK)//手机系列
+            stringBuilder.append("model= ${UtilKBuild.get_MODEL()}").append(CMsg.LINE_BREAK)//手机系列
             stringBuilder.append("rom= ${UtilKDevice.getRomVersion()}").append(CMsg.LINE_BREAK)//rom
-            stringBuilder.append("os= ${UtilKBuild.getVersionRelease()}").append(CMsg.LINE_BREAK)//API版本:9.0
-            stringBuilder.append("sdk= ${UtilKBuild.getVersionSDK()}").append(CMsg.LINE_BREAK)//SDK版本:31
+            stringBuilder.append("os= ${UtilKBuildVersion.get_RELEASE()}").append(CMsg.LINE_BREAK)//API版本:9.0
+            stringBuilder.append("sdk= ${UtilKBuildVersion.get_SDK_INT_STR()}").append(CMsg.LINE_BREAK)//SDK版本:31
             stringBuilder.append("launch_time= $_launchTime").append(CMsg.LINE_BREAK)//启动APP的时间
             stringBuilder.append("crash_time= ${UtilKDateWrapper.getNowStr()}").append(CMsg.LINE_BREAK)//crash发生的时间
 //            stringBuilder.append("foreground= ${StackKCb.instance.isFront()}").append(CMsg.LINE_BREAK)//应用处于前台
