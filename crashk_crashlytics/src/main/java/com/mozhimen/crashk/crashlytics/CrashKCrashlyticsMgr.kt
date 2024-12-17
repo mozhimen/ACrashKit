@@ -1,7 +1,7 @@
 package com.mozhimen.crashk.crashlytics
 
 import com.mozhimen.libk.google.firebase.basic.optins.OApiInit_InApplication_FirebaseBasicMgr
-import com.mozhimen.libk.google.firebase.basic.optins.OPlugin_ClassPath_FirebaseCrashlytics
+import com.mozhimen.libk.google.firebase.crashlytics.optins.OPlugin_ClassPath_FirebaseCrashlytics
 import com.mozhimen.libk.google.firebase.crashlytics.FirebaseCrashlyticsMgr
 
 /**
