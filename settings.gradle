@@ -33,16 +33,20 @@ project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit
 include ':ALibKit_Google:firebase_crashlytics'
 include ':ALibKit_Google:firebase_analytics'
 include ':ALibKit_Google:firebase_basic'
+//ALibKit_Jetbrains
+include ':ALibKit_Jetbrains'
+project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
+include ':ALibKit_Jetbrains:kotlin_stdlib'
 //ALibKit_Squareup
 include ':ALibKit_Squareup'
 project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
 include ':ALibKit_Squareup:moshi'
-//SwiftKit
-include ':SwiftKit'
-project(':SwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\SwiftKit")
-include ':SwiftKit:basick'
-include ':SwiftKit:xmlk'
-include ':SwiftKit:bindk'
+//ASwiftKit
+include ':ASwiftKit'
+project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
+include ':ASwiftKit:basick'
+include ':ASwiftKit:xmlk'
+include ':ASwiftKit:bindk'
 //AXmlKit
 include ':AXmlKit'
 project(':AXmlKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit")
