@@ -20,23 +20,37 @@ dependencyResolutionManagement {
 
 rootProject.name = "ACrashKit"
 include ':app'
-include ':crashk_java'
-include ':crashk_java_debug'
-include ':crashk_java_debug_test'
-include ':crashk_native'
-include ':crashk_native_test'
-include ':crashk_crashlytics'
-include ':crashk_basic'
+include ':java'
+include ':java_debug'
+include ':java_debug_test'
+include ':native'
+include ':native_test'
+include ':crashlytics'
+include ':basic'
+include ':xcrash'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
-include ':ALibKit_Google:firebase_crashlytics'
-include ':ALibKit_Google:firebase_analytics'
-include ':ALibKit_Google:firebase_basic'
+include ':ALibKit_Google:firebase:firebase_crashlytics'
+include ':ALibKit_Google:firebase:firebase_analytics'
+include ':ALibKit_Google:firebase:firebase_basic'
+include ':ALibKit_Google:material'
+//ALibKit_Jetpack
+include ':ALibKit_Jetpack'
+project(':ALibKit_Jetpack').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetpack")
+include ':ALibKit_Jetpack:databinding'
+include ':ALibKit_Jetpack:core'
+include ':ALibKit_Jetpack:annotation'
 //ALibKit_Jetbrains
 include ':ALibKit_Jetbrains'
 project(':ALibKit_Jetbrains').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Jetbrains")
 include ':ALibKit_Jetbrains:kotlin_stdlib'
+include ':ALibKit_Jetbrains:kotlinx_coroutines'
+//KUtilKit
+include ':KUtilKit'
+project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
+include ':KUtilKit:android'
+include ':KUtilKit:kotlin'
 //ALibKit_Squareup
 include ':ALibKit_Squareup'
 project(':ALibKit_Squareup').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Squareup")
@@ -55,15 +69,10 @@ include ':AXmlKit:vhk'
 //ASerialKit
 include ':ASerialKit'
 project(':ASerialKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASerialKit")
-include ':ASerialKit:serialk_moshi'
-//KUtilKit
-include ':KUtilKit'
-project(':KUtilKit').projectDir = new File("D:\\WorkSpace\\GitHub\\KUtilKit")
-include ':KUtilKit:utilk_android'
-include ':KUtilKit:utilk_kotlin'
+include ':ASerialKit:moshi'
 //AStackKit
 include ':AStackKit'
 project(':AStackKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AStackKit")
 include ':AStackKit:stackk'
-include ':AStackKit:stackk_callback'
-include ':AStackKit:stackk_basic'
+include ':AStackKit:callback'
+include ':AStackKit:basic'

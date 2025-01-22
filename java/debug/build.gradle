@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.crashk.java'
+    namespace 'com.mozhimen.crashk.debug'
     compileSdk 34
 
     defaultConfig {
@@ -12,7 +12,7 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
+//        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -28,14 +28,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures.buildConfig = true
 }
 
 dependencies {
-    implementation project(':KUtilKit:utilk_android')
-    api project(project.path.replace(project.name, '') + ':crashk_basic')
+    debugImplementation project(":ACrashKit:java")
 
-    //test
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

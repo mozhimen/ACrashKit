@@ -50,8 +50,8 @@ android {
 }
 
 dependencies {
-    api project(project.path.replace(project.name, "") + ':crashk_basic')
-    implementation project(':KUtilKit:utilk_android')
+    api project(project.path.replace(project.name, "") + ':basic')
+    implementation project(':KUtilKit:android')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
