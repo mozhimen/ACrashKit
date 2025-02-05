@@ -1,7 +1,7 @@
 package com.mozhimen.crashk_native.test
 
 import android.os.Bundle
-import com.mozhimen.bindk.bases.viewbinding.activity.BaseActivityVB
+import com.mozhimen.uik.databinding.bases.viewbinding.activity.BaseActivityVB
 import com.mozhimen.crashk_native.CrashKNativeMgr
 import com.mozhimen.crashk_native.test.databinding.ActivityMainBinding
 import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
