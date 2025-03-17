@@ -142,7 +142,7 @@ class CrashKJavaProxy : BaseUtilK(), ICrashK, ICrashKJava<CrashKJavaProxy> {
 
             //sd storage size
             try {
-                stringBuilder.append("availableStorage= ${UtilKStorage.getExternalMemorySize_ofFree()}").append(CMsg.LINE_BREAK)//存储空间
+                stringBuilder.append("availableStorage= ${UtilKStorage.getExternalStorageSize_ofFree()}").append(CMsg.LINE_BREAK)//存储空间
             } catch (_: Exception) {
             }
             stringBuilder.append(CMsg.PART_LINE_BIAS).append(CMsg.LINE_BREAK)
